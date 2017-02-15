@@ -1,5 +1,9 @@
 FROM node:7.5
 
+# Add debian backports to repo source list
+RUN echo deb http://http.debian.net/debian jessie-backports main \
+    >> /etc/apt/sources.list
+
 # Installs i386 architecture required for running 32 bit Android tools
 RUN dpkg --add-architecture i386 \
     && apt-get update -y \
