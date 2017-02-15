@@ -17,7 +17,7 @@ RUN curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash - && \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-# Install android SDK, tools and platforms 
+# Install android SDK, tools and platforms
 RUN cd /opt \
     && curl https://dl.google.com/android/android-sdk_r24.4.1-linux.tgz -o android-sdk.tgz \
     && tar xzf android-sdk.tgz \
