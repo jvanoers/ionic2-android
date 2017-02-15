@@ -7,7 +7,7 @@ RUN echo deb http://http.debian.net/debian jessie-backports main \
 # Installs i386 architecture required for running 32 bit Android tools
 RUN dpkg --add-architecture i386 \
     && apt-get update -y \
-    && apt-get install -y --no-install-recommends \
+    && apt-get install -y \
         libc6:i386 \
         libncurses5:i386 \
         libstdc++6:i386 \
@@ -15,6 +15,7 @@ RUN dpkg --add-architecture i386 \
         lib32gcc1 \
         lib32z1 \
         lib32stdc++6 \
+        openjdk-8-jre-headless \
         openjdk-8-jdk-headless \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
