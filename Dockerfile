@@ -1,13 +1,12 @@
-FROM node:7.5
+FROM openjdk:8-jdk
 
-# Add debian backports to repo source list
-RUN echo deb http://http.debian.net/debian jessie-backports main \
-    >> /etc/apt/sources.list
-
+# Node 7
 # Installs i386 architecture required for running 32 bit Android tools
-RUN dpkg --add-architecture i386 \
-    && apt-get update -y \
-    && apt-get install -y \
+RUN curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash - && \
+    dpkg --add-architecture i386 \
+    && apt-get update \
+    && apt-get install -y --no-install-recommends \
+        nodejs \
         libc6:i386 \
         libncurses5:i386 \
         libstdc++6:i386 \
@@ -15,8 +14,6 @@ RUN dpkg --add-architecture i386 \
         lib32gcc1 \
         lib32z1 \
         lib32stdc++6 \
-        openjdk-8-jre-headless \
-        openjdk-8-jdk-headless \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
