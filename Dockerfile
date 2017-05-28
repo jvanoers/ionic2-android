@@ -7,6 +7,7 @@ RUN curl -sL https://deb.nodesource.com/setup_7.x | bash - && \
     && apt-get update \
     && apt-get install -y --no-install-recommends \
         nodejs \
+        gradle \
         libc6:i386 \
         libncurses5:i386 \
         libstdc++6:i386 \
