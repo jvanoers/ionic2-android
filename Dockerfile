@@ -1,5 +1,7 @@
 FROM gradle:3.5-jdk8
 
+USER root
+
 # Node 7
 # Installs i386 architecture required for running 32 bit Android tools
 RUN curl -sL https://deb.nodesource.com/setup_7.x | bash - && \
