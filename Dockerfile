@@ -1,4 +1,4 @@
-FROM openjdk:8-jdk
+FROM gradle:3.5-jdk8
 
 # Node 7
 # Installs i386 architecture required for running 32 bit Android tools
@@ -7,7 +7,6 @@ RUN curl -sL https://deb.nodesource.com/setup_7.x | bash - && \
     && apt-get update \
     && apt-get install -y --no-install-recommends \
         nodejs \
-        gradle \
         libc6:i386 \
         libncurses5:i386 \
         libstdc++6:i386 \
