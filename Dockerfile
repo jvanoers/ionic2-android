@@ -32,7 +32,7 @@ RUN npm i -g cordova ionic gulp bower grunt phonegap node-gyp && npm cache clean
 
 # Create dummy app to build and preload gradle and maven dependencies
 RUN cd / \
-    && echo 'n' | ionic start app --type ionic-angular \
+    && echo 'n' | ionic start app blank \
     && cd /app \
     && ionic platform add android \
     && ionic build android \
