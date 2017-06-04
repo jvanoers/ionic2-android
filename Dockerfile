@@ -30,7 +30,7 @@ RUN echo 'y' | /opt/android-sdk-linux/tools/android update sdk -u -a -t \
     platform-tools,build-tools-25.0.2,android-25,extra-google-google_play_services,extra-google-m2repository,extra-android-m2repository
 
 # Install npm packages
-RUN npm i -g cordova ionic gulp bower grunt phonegap node-gyp && npm cache clean
+RUN npm i -g cordova ionic gulp bower grunt phonegap node-gyp
 
 # Create dummy app to build and preload gradle and maven dependencies
 RUN cd / \
