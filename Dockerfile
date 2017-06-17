@@ -4,7 +4,7 @@ USER root
 
 # Node 7
 # Installs i386 architecture required for running 32 bit Android tools
-RUN curl -sL https://deb.nodesource.com/setup_8.x | bash - && \
+RUN curl -sL https://deb.nodesource.com/setup_7.x | bash - && \
     dpkg --add-architecture i386 \
     && apt-get update \
     && apt-get install -y --no-install-recommends \
